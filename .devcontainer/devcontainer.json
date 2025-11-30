@@ -1,0 +1,24 @@
+{
+    "name": "Todo App Dev Container",
+    "build": {
+        "context": "..",
+        "dockerfile": "../Dockerfile",
+        "target": "build"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "Shopify.ruby-lsp",
+                "KoichiSasada.vscode-rdbg"
+            ]
+        }
+    },
+    "forwardPorts": [
+        80
+    ],
+    "remoteEnv": {
+        "RAILS_ENV": "development"
+    },
+    "workspaceFolder": "/rails",
+    "workspaceMount": "source=${localWorkspaceFolder},target=/rails,type=bind"
+}
